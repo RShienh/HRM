@@ -1,1 +1,3 @@
-1|Rajbir|24|rajbirsingh@gmail.com|Etobicoke|Software Architect|S|100,000|
+2|Amandeep|23|aman@gmail.com|Etobicoke|software developer|100,000
+3|BEN|26|ben@gmail.com|Etobicoke|software developer|100,000
+1|Rajbir|24|rajbir@gmail.com|Etobicoke|Software Developer|120,000

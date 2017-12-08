@@ -6,13 +6,11 @@
 package hrm;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 /**
  *
@@ -23,16 +21,25 @@ public class Search {
     public static void searchList() throws FileNotFoundException, IOException {
         Scanner in = new Scanner(System.in);
         String eID, eData;
-        File dB = new File("Database.txt");
-        BufferedReader br = new BufferedReader(new FileReader(dB));
+        BufferedReader br = new BufferedReader(new FileReader("Database.txt"));
         System.out.print("      Enter the ID of the Employee data to searched ");
         eID = in.nextLine();
-        while ((eData = br.readLine()) != null) {
-            if (eData.contains(eID)) {
+        System.out.println("---------------------------------------------------------------------------------------------------------------");
+        System.out.format("%-5S%-15S%-10S%-20S%-20S%-15S%-10S%-15S",
+                "ID", "Name", "Age", "Email", "Address", "Position", "Pay-type", "Salary");//Used formatters to format output data
+        System.out.println("");
+        System.out.println("---------------------------------------------------------------------------------------------------------------");
 
-                System.out.println("\nData has found");
+        while ((eData = br.readLine()) != null) {
+            StringTokenizer tokenizer = new StringTokenizer(eData, "|");
+            if (eData.contains(eID)) {
+                System.out.format("%-5s%-15s%-10s%-20s%-20s%-15s%-10s%-15s",
+                        tokenizer.nextToken(), tokenizer.nextToken(), tokenizer.nextToken(), tokenizer.nextToken(),
+                        tokenizer.nextToken(), tokenizer.nextToken(), tokenizer.nextToken(), tokenizer.nextToken());
+                System.out.println("");
             }
         }
+        System.out.println("---------------------------------------------------------------------------------------------------------------");
         br.close();
     }
 }

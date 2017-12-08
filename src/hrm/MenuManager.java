@@ -16,6 +16,7 @@ public class MenuManager {
 
     public static void Menus() throws IOException {
         Scanner input = new Scanner(System.in);
+        String eID = null;
         System.out.println("Welcome to HRM system");
         System.out.println("..Select from list of menus..");
         boolean exit = false;
@@ -38,21 +39,22 @@ public class MenuManager {
                         System.out.println("        1. Add an employee");
                         System.out.println("        2. Remove an employee data");
                         System.out.println("        3. Edit employee's data");
-                        System.out.println("        4.List of Employees");
+                        System.out.println("        4. List of Employees");
                         System.out.println("        5. Exit");
                         System.out.print("          Select your option : - ");
                         switch (input.nextInt()) {
                             case 1:
-                                Employee.addEmployee();
+                                Employee.addEmployee(eID);
                                 break;
                             case 2:
-                                Employee.deleteEmployee();
+                                Employee.deleteEmployee(eID);
                                 break;
                             case 3:
-                                //Edit an employee's data
+                                Employee.updateEmployee();
                                 break;
                             case 4:
                                 List.listAll();
+                                break;
                             case 5:
                                 System.out.println("");
                                 System.out.println("        You chose to exit !");
@@ -70,7 +72,7 @@ public class MenuManager {
                     List.listAll();
                     break;
                 case 3:
-                    System.out.println("3. Find an employee");
+                    System.out.println("Searching for an employee : ");
                     Search.searchList();
                     break;
                 case 4:

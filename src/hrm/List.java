@@ -22,15 +22,15 @@ public class List {
         BufferedReader br = new BufferedReader(new FileReader("Database.txt"));
         System.out.println("");
         System.out.println("---------------------------------------------------------------------------------------------------------------");
-        System.out.format("%-5S%-15S%-10S%-20S%-20S%-15S%-10S%-15S",
-                "ID", "Name", "Age", "Email", "Address", "Position", "Pay-type", "Salary");//Used formatters to format output data
+        System.out.format("%-5S%-15S%-10S%-20S%-20S%-20S%-15S",
+                "ID", "Name", "Age", "Email", "Address", "Position", "Salary");//Used formatters to format output data
         System.out.println("");
         System.out.println("---------------------------------------------------------------------------------------------------------------");
         while ((eData = br.readLine()) != null) {
             StringTokenizer tokenizer = new StringTokenizer(eData, "|");
-            System.out.format("%-5s%-15s%-10s%-20s%-20s%-15s%-10s%-15s",
+            System.out.format("%-5s%-15s%-10s%-20s%-20s%-20s%-15s",
                     tokenizer.nextToken(), tokenizer.nextToken(), tokenizer.nextToken(), tokenizer.nextToken(),
-                    tokenizer.nextToken(), tokenizer.nextToken(), tokenizer.nextToken(), tokenizer.nextToken());
+                    tokenizer.nextToken(), tokenizer.nextToken(), tokenizer.nextToken());
             System.out.println("");
         }
         System.out.println("---------------------------------------------------------------------------------------------------------------");
